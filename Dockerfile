@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y build-essential && apt-get install -y w
 
 
 WORKDIR /home
-COPY . .
+git clone https://github.com/ziyewang/COMEBin.git
+WORKDIR /home/COMEBin
 RUN conda env create -f comebin_env.yaml
 RUN echo "conda activate comebin_env" >> ~/.bashrc
 SHELL ["/bin/bash", "-c"]
